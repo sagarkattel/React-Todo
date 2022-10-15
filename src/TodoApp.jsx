@@ -57,7 +57,15 @@ function FormTodo({ addTodo }) {
     <Form.Group>
       <Form.Label><b>Add Todo</b></Form.Label>
       <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new todo" />
+      <hr
+        style={{
+            color: "red",
+            backgroundColor:"yellow",
+            height: 0,
+        }}
+    />
     </Form.Group>
+    
     <Button variant="primary mb-3" type="submit">
       Submit
     </Button>
