@@ -9,20 +9,22 @@ const useLocalStorage =(storageKey,fallbackState)=>{
   )
   useEffect(()=>{
       localStorage.setItem(storageKey,JSON.stringify(value));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[value,setValue])
   return [value,setValue];
 }
 
 function Todo({ todo, index, markTodo, removeTodo }) {
 
-  const[isMarked,setIsMarked]=useLocalStorage(index,false);
+  const[isMarked,setIsMarked]=useLocalStorage(`${index}`,false);
   const handleToggle=()=>{
   
     markTodo(index);
     setIsMarked(!isMarked);
    }
    useEffect(() => {
-    localStorage.setItem(index, JSON.stringify(isMarked));
+    localStorage.setItem(`${index}`, JSON.stringify(isMarked));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMarked]);
 
 
