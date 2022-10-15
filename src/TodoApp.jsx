@@ -22,7 +22,7 @@ function Todo({ todo, index, markTodo, removeTodo }) {
     setIsMarked(!isMarked);
    }
    useEffect(() => {
-    localStorage.setItem(`$index`, JSON.stringify(isMarked));
+    localStorage.setItem(index, JSON.stringify(isMarked));
   }, [isMarked]);
 
 
